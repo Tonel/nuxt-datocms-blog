@@ -6,7 +6,7 @@
     <div v-if="article.publicationDate" class="article-publication-date">
       Article published on: {{ new Date(article.publicationDate).toLocaleString() }}
     </div>
-    <structured-text :data="article.content" class="article-content"/>
+    <datocms-structured-text :data="article.content" class="article-content"/>
   </div>
 </template>
 
@@ -36,7 +36,7 @@
 // to give the frontend page the ability to
 // render rich-text content fields via the
 // "<structured-text>" element
-import { StructuredText } from 'vue-datocms';
+import { StructuredText as DatocmsStructuredText } from 'vue-datocms';
 
 // to get access to the "slug" dynamic param
 const route = useRoute()
